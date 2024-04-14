@@ -1,0 +1,7 @@
+<div
+  class="focus:outline-none h-[5vh] flex items-center justify-center text-center transition-colors duration-300 ease-in-out
+         font-semibold px-2 rounded-lg shadow-md sm:py-3 sm:px-6 lg:px-8 cursor-pointer focus:bg-hover
+         {{ outline ? 'bg-transparent border border-primary text-primary hover:bg-primary hover:text-white' : 'bg-secondary text-white hover:bg-hover hover:text-white' }}"
+  (click)="handleClick($event)">
+  <ng-content></ng-content>
+</div>
