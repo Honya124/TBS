@@ -11,6 +11,15 @@ import { UpdateProductComponent } from './components/products/update-product/upd
 import { ProductDetailsComponent } from './components/products/product-details/product-details.component';
 import { AddProductComponent } from './components/products/add-product/add-product.component';
 import { CustomerComponent } from './components/customer/customer.component';
+import { CustomerDetailComponent } from './components/customer/customer-detail/customer-detail.component';
+import { ShipmentsComponent } from './components/shipments/shipments.component';
+import { AddShipmentComponent } from './components/shipments/add-shipment/add-shipment.component';
+import { UpdateShipmentComponent } from './components/shipments/update-shipment/update-shipment.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
+import { AddBlogComponent } from './components/blogs/add-blog/add-blog.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { SendOfferComponent } from './components/messages/send-offer/send-offer.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -23,6 +32,16 @@ const routes: Routes = [
   { path: 'update-product', component: UpdateProductComponent },
   { path: 'product-detail', component: ProductDetailsComponent },
   { path: 'customers', component: CustomerComponent },
+  { path: 'customer-details', component: CustomerDetailComponent },
+  { path: 'orders', component: CustomerDetailComponent },
+  {path:'shipments',component:ShipmentsComponent},  
+  {path:'new-shipment',component:AddShipmentComponent},  
+  {path:'update-shipment',component:UpdateShipmentComponent},  
+  {path:'blogs',component:BlogsComponent},  
+  {path:'new-blog',component:AddBlogComponent}, 
+  {path:'reviews',component:ReviewsComponent},  
+  {path:'messages',component:MessagesComponent},  
+  {path:'send-message',component:SendOfferComponent},  
 ];
 
 @NgModule({

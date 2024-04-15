@@ -1,0 +1,206 @@
+<div class="text-black flex flex-col flex-1 gap-6 h-auto m-[2rem]  ">
+
+    <!-- nav users page  -->
+    <div class="flex items-center ">
+        <div class="font-[700] text-[40px] ml-2">
+            {{'reviews'|translate}}
+        </div>
+        <!-- <div class="flex justify-around items-center flex-1">
+
+           
+            <div class="flex gap-3 items-center ">
+                <div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 7C12.3956 7 12.7822 6.8827 13.1111 6.66294C13.44 6.44318 13.6964 6.13082 13.8478 5.76537C13.9991 5.39992 14.0387 4.99778 13.9616 4.60982C13.8844 4.22186 13.6939 3.86549 13.4142 3.58579C13.1345 3.30608 12.7781 3.1156 12.3902 3.03843C12.0022 2.96126 11.6001 3.00087 11.2346 3.15224C10.8692 3.30362 10.5568 3.55996 10.3371 3.88886C10.1173 4.21776 10 4.60444 10 5C10 5.53043 10.2107 6.03914 10.5858 6.41421C10.9609 6.78929 11.4696 7 12 7ZM12 17C11.6044 17 11.2178 17.1173 10.8889 17.3371C10.56 17.5568 10.3036 17.8692 10.1522 18.2346C10.0009 18.6001 9.96126 19.0022 10.0384 19.3902C10.1156 19.7781 10.3061 20.1345 10.5858 20.4142C10.8655 20.6939 11.2219 20.8844 11.6098 20.9616C11.9978 21.0387 12.3999 20.9991 12.7654 20.8478C13.1308 20.6964 13.4432 20.44 13.6629 20.1111C13.8827 19.7822 14 19.3956 14 19C14 18.4696 13.7893 17.9609 13.4142 17.5858C13.0391 17.2107 12.5304 17 12 17ZM12 10C11.6044 10 11.2178 10.1173 10.8889 10.3371C10.56 10.5568 10.3036 10.8692 10.1522 11.2346C10.0009 11.6001 9.96126 12.0022 10.0384 12.3902C10.1156 12.7781 10.3061 13.1345 10.5858 13.4142C10.8655 13.6939 11.2219 13.8844 11.6098 13.9616C11.9978 14.0387 12.3999 13.9991 12.7654 13.8478C13.1308 13.6964 13.4432 13.44 13.6629 13.1111C13.8827 12.7822 14 12.3956 14 12C14 11.4696 13.7893 10.9609 13.4142 10.5858C13.0391 10.2107 12.5304 10 12 10Z"
+                            fill="#7B7878" />
+                    </svg>
+
+                </div>
+                <div class="rounded-[50%] w-[60px] h-[60px]">
+                    <img class=" rounded-[50%] bg-center bg-cover bg-no-repeat"
+                        src="../../../assets/img/profileImg.png" alt="">
+                </div>
+
+
+            </div>
+        </div> -->
+
+    </div>
+
+    <!-- searching by users data  -->
+    <!-- <div class="flex gap-[1rem] mt-[10%] items-center">
+
+        <div class="flex">
+            <input type="text" placeholder="Search for the tool you like"
+                class="w-full md:w-80 px-3 h-10 rounded-l border-2 border-grey-green focus:outline-none focus:border-secondary">
+            <button type="submit"
+                class="bg-secondary text-white rounded-r px-2 md:px-3 py-0 md:py-1">Search</button>
+        </div>
+    </div> -->
+
+    <div class="flex flex-col gap-2 h-auto w-[60vw] bg-[#fff] rounded-[15px] shadow-lg mt-[10%] ">
+        <!-- shown and hide product  -->
+        <div class="flex gap-2 items-center border-b  border-grey w-[60vw] pt-6 px-6"> 
+            <!-- add products  [classList]="{'active':shownProduct}" -->
+           <div [ngClass]="{'greyGreenText':showReview,'blackText':!showReview}"
+           class="flex gap-[1rem] items-center pb-2 text-grey-label hover:text-grey-green px-6
+            hover:border-grey-green hover:border-b-2  cursor-pointer" (click)="shownReviewFun()" >
+             {{' shown_product'}}
+           </div>
+            <!-- delete product by selection products  -->
+           <div [ngClass]="{'greyGreenText':hideReview,'blackText':!hideReview}"
+           class="flex gap-[1rem] items-center pb-2 text-grey-label hover:text-grey-green px-6
+           hover:border-grey-green hover:border-b-2 cursor-pointer" (click)="hiddenReviewFun()" >
+             {{' hide_product'}}
+           </div>
+           
+          </div>
+        <div class="relative overflow-x-auto   p-6">
+            <table class="w-full h-auto  text-center font-[500] ">
+                <thead class=" text-[14px] text-grey bg-[#F9FAFB]  ">
+                    <tr class="text-[14px] uppercase ">
+                        <th scope="col" class="px-6 py-[.7rem] ">
+                          {{'customer'|translate}}
+                        </th>
+                        <th scope="col" class="px-6 py-[.7rem] ">
+                            {{'title'|translate}}
+                        </th>
+                        <th scope="col" class="px-6 py-[.7rem] ">
+                            {{'comment'|translate}}
+                        </th>
+                        <th scope="col" class="px-6 py-[.7rem] ">
+                            {{'rating'|translate}}
+                        </th>
+                        <th scope="col" class="px-6 py-[.7rem] ">
+                            {{'admin_agreed'|translate}}
+                        </th>
+                        <th scope="col" class="px-6 py-[.7rem] ">
+                            {{'date_created'|translate}}
+                        </th>
+                        <th scope="col" class="px-6 py-[.7rem] ">
+                            {{'time_elapsed_description'|translate}}
+                        </th>
+                        <th scope="col" class="px-6 py-[.7rem] ">
+                        </th>
+                        
+                    </tr>
+                </thead>
+                    <tbody>
+                        @if(showReview){
+                            @for (customerReview of allShownReviewArray; track customerReview.id) {
+                                <tr class="text-[14px]  border-[#EAECF0]  border-t">
+                                    <td class="px-6 py-3 ">
+                                        {{customerReview.name}}
+                                    </td>
+                                    <!-- @for (review of customerReview.review; track review.id) { -->
+                                        <td class="px-6 py-3 ">
+                                            {{customerReview.review.title}}
+                                        </td>
+                                        <td class="px-6 py-3 ">
+                                            {{customerReview.review.comment}}
+                                        </td>
+                                        <td class="px-6 py-3 ">
+                                            {{customerReview.review.rating}}
+                                        </td>
+                                        <td class="px-6 py-3 ">
+                                            {{customerReview.review.admin_agreed}}
+                                        </td>
+                                        <td class="px-6 py-3 ">
+                                            {{customerReview.review.date_created}}
+                                        </td>
+                                    <!-- } -->
+                                    <td class="px-6 py-3 ">
+                                        {{customerReview.time_elapsed_description}}
+                                    </td>
+                                    <td class="px-6 py-3  ">
+                                        <!-- <div class="flex items-center gap-3"> -->
+                                            <div class="cursor-pointer" (click)="hideReviewFun(customerReview.review.review_id)" >
+                                                <svg width="24" height="23" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M10.3787 3.9375L13.4167 6.7025V6.5625C13.4167 5.86631 13.1138 5.19863 12.5746 4.70634C12.0354 4.21406 11.3042 3.9375 10.5417 3.9375H10.3787ZM6.25792 4.6375L7.74333 5.99375C7.69542 6.1775 7.66667 6.36125 7.66667 6.5625C7.66667 7.25869 7.96957 7.92637 8.50873 8.41866C9.0479 8.91094 9.77917 9.1875 10.5417 9.1875C10.7525 9.1875 10.9633 9.16125 11.1646 9.1175L12.65 10.4738C12.0079 10.7625 11.2987 10.9375 10.5417 10.9375C9.27084 10.9375 8.05206 10.4766 7.15345 9.65609C6.25483 8.83562 5.75 7.72282 5.75 6.5625C5.75 5.87125 5.94167 5.22375 6.25792 4.6375ZM3.57458 2.1875C1.99333 3.325 0.7475 4.8125 0 6.5625C1.65792 10.4038 5.75 13.125 10.5417 13.125C12.0271 13.125 13.4454 12.8625 14.7392 12.39L3.57458 2.1875ZM10.5417 2.1875C11.8125 2.1875 13.0313 2.64844 13.9299 3.46891C14.8285 4.28938 15.3333 5.40218 15.3333 6.5625C15.3333 7.1225 15.2087 7.665 14.9883 8.155L17.7962 10.7188C19.2337 9.625 20.3837 8.19 21.0833 6.5625C19.4254 2.72125 15.3333 0 10.5417 0C9.2 0 7.91583 0.21875 6.70833 0.6125L8.78792 2.49375C9.33417 2.30125 9.91875 2.1875 10.5417 2.1875Z" fill="#000"/>
+                                                    <circle cx="10.5835" cy="6.8125" r="3" fill="#000"/>
+                                                    <path d="M9.0942 2.41837C7.11639 3.20073 7.05761 3.34158 6.06796 4.805C4.72507 4.75389 3.52874 4.03369 3.57374 2.85126C3 1.5 8.09876 0.0225607 7.5 0.5C8.4926 -0.291565 9.1392 1.23594 9.0942 2.41837Z" fill="#000"/>
+                                                    <path d="M12.5 10.5C14.3731 9.48907 14.1854 9.58231 15.0835 7.81292C16.3766 7.81292 18.2943 10.3391 17.5833 10.8131C16.0833 11.8131 14.0251 12.9026 14.5833 12.313C13.6579 13.2906 12.5 11.4998 12.5 10.5Z" fill="#000"/>
+                                                    <path d="M6.77393 0.724321C6.73575 0.724321 6.70114 0.720255 6.66875 0.744549C6.64683 0.760983 6.73197 0.726844 6.74561 0.71623C6.78468 0.685845 6.87381 0.685886 6.91047 0.715218" stroke="#000" stroke-width="0.2"/>
+                                                    <path d="M17.6211 10.6797C17.6385 10.6691 17.6594 10.6667 17.6766 10.6562C17.6909 10.6476 17.6985 10.6374 17.7101 10.6259C17.7291 10.6068 17.7426 10.5779 17.7656 10.5625" stroke="#000" stroke-width="0.2"/>
+                                                    </svg>
+                                                    
+    
+                                            </div>
+    
+    
+                                        <!-- </div> -->
+                                    </td>
+                                 
+                                  
+                                </tr>
+                                }
+                            
+                        }@else if(hideReview){
+                            @for (customerReview of allHiddenReviewArray; track customerReview.id) {
+                                <tr class="text-[14px]  border-[#EAECF0]  border-t">
+                                    <td class="px-6 py-3 ">
+                                        {{customerReview.name}}
+                                    </td>
+                                    <!-- @for (review of customerReview.review; track review.id) { -->
+                                        <td class="px-6 py-3 ">
+                                            {{customerReview.review.title}}
+                                        </td>
+                                        <td class="px-6 py-3 ">
+                                            {{customerReview.review.comment}}
+                                        </td>
+                                        <td class="px-6 py-3 ">
+                                            {{customerReview.review.rating}}
+                                        </td>
+                                        <td class="px-6 py-3 ">
+                                            {{customerReview.review.admin_agreed}}
+                                        </td>
+                                        <td class="px-6 py-3 ">
+                                            {{customerReview.review.date_created}}
+                                        </td>
+                                    <!-- } -->
+                                    <td class="px-6 py-3 ">
+                                        {{customerReview.time_elapsed_description}}
+                                    </td>
+                                    <td class="px-6 py-3  ">
+                                        <!-- <div class="flex items-center gap-3"> -->
+                                            <div class="cursor-pointer" (click)="showReviewFun(customerReview.review.review_id)" >
+                                                <svg width="24" height="23" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.85825 6.84784L12.4999 9.25219V9.13045C12.4999 8.52506 12.2365 7.94447 11.7677 7.5164C11.2988 7.08833 10.663 6.84784 9.99992 6.84784H9.85825ZM6.27492 7.45654L7.56658 8.63588C7.52492 8.79567 7.49992 8.95545 7.49992 9.13045C7.49992 9.73584 7.76331 10.3164 8.23215 10.7445C8.70099 11.1726 9.33688 11.4131 9.99992 11.4131C10.1833 11.4131 10.3666 11.3902 10.5416 11.3522L11.8333 12.5315C11.2749 12.7826 10.6583 12.9348 9.99992 12.9348C8.89485 12.9348 7.83504 12.534 7.05364 11.8205C6.27224 11.1071 5.83325 10.1394 5.83325 9.13045C5.83325 8.52936 5.99992 7.96632 6.27492 7.45654ZM1.66659 3.24893L3.56659 4.98371L3.94159 5.3261C2.56659 6.31523 1.48325 7.60871 0.833252 9.13045C2.27492 12.4707 5.83325 14.837 9.99992 14.837C11.2916 14.837 12.5249 14.6087 13.6499 14.1978L14.0083 14.5174L16.4416 16.7391L17.4999 15.7728L2.72492 2.28262M9.99992 5.3261C11.105 5.3261 12.1648 5.72692 12.9462 6.44037C13.7276 7.15382 14.1666 8.12147 14.1666 9.13045C14.1666 9.61741 14.0583 10.0891 13.8666 10.5152L16.3083 12.7446C17.5583 11.7935 18.5583 10.5457 19.1666 9.13045C17.7249 5.79023 14.1666 3.42393 9.99992 3.42393C8.83325 3.42393 7.71658 3.61415 6.66658 3.95654L8.47492 5.59241C8.94992 5.42501 9.45825 5.3261 9.99992 5.3261Z" fill="#000"/>
+                                                    </svg>
+                                                    
+                                                    
+    
+                                            </div>
+    
+    
+                                        <!-- </div> -->
+                                    </td>
+                                 
+                                  
+                                </tr>
+                                }
+
+                        }
+                       
+                    </tbody>
+                   
+                
+                
+            
+
+                <!-- @else if(hideProduct) { 
+                    <app-hide-reviews></app-hide-reviews>
+                }
+                @else{
+                    <p class="text-grey-green font-[500] text-[14px]">There Is No Product</p>
+                } -->
+          
+            </table>
+        </div>
+
+    </div>
+
+
+</div>

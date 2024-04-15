@@ -5,8 +5,11 @@ import { PublicService } from '../public.service';
 @Injectable({ providedIn: 'root' })
 export class UserService {
   private apiUrl = 'https://belita-backend-ece2qdboea-uc.a.run.app';
+  lang = localStorage.getItem('selectedLanguage');
   // private http:HttpClient = inject(HttpClient);
   constructor(private http: HttpClient, public publicService: PublicService) {}
+
+  
 
   updateUser(id: string, data: any) {
     console.log(data);
@@ -57,4 +60,36 @@ export class UserService {
 
     return this.http.get(url, { headers });
   }
+
+
+  // searchUser(keyword:any,page: any) {
+  //   return this.http.get(
+  //     this.apiUrl +
+  //       '/search_employees?lang='+this.lang+
+  //      "&keyword="+ keyword +
+  //       '&page='+page,
+  //     {
+  //       headers: new HttpHeaders({
+  //         'Content-Type': 'application/json',
+  //         Authorization: `Bearer ${localStorage.getItem('token')}`, // Add the token to the headers
+  //       }),
+  //     }
+  //   );
+  // }
+  searchUser(keyword:any,page: any) {
+    return this.http.post(
+      this.apiUrl +
+        '/search_employees',{
+          "keyword":keyword,
+          "page":page
+        },
+      {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + localStorage.getItem('token'),
+        }),
+      }
+    );
+  }
+
 }

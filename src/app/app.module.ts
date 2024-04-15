@@ -23,6 +23,18 @@ import { UpdateProductComponent } from './components/products/update-product/upd
 import { ProductDetailsComponent } from './components/products/product-details/product-details.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { CustomerDetailComponent } from './components/customer/customer-detail/customer-detail.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { OrderDetailsComponent } from './components/orders/order-details/order-details.component';
+import { ShipmentsComponent } from './components/shipments/shipments.component';
+import { AddShipmentComponent } from './components/shipments/add-shipment/add-shipment.component';
+import { UpdateShipmentComponent } from './components/shipments/update-shipment/update-shipment.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
+import { AddBlogComponent } from './components/blogs/add-blog/add-blog.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
+import { ShownReviewsComponent } from './components/reviews/shown-reviews/shown-reviews.component';
+import { HideReviewsComponent } from './components/reviews/hide-reviews/hide-reviews.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { SendOfferComponent } from './components/messages/send-offer/send-offer.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -30,7 +42,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [AppComponent, LoginComponent, ButtonComponent,
      PasswordComponent, TextInputComponent, SidebarComponent, DashboardComponent,
       UsersComponent, EditUserComponent, AddUserComponent, ProductsComponent, AddProductComponent, 
-      UpdateProductComponent, ProductDetailsComponent, CustomerComponent, CustomerDetailComponent],
+      UpdateProductComponent, ProductDetailsComponent, CustomerComponent, CustomerDetailComponent, OrdersComponent, OrderDetailsComponent, ShipmentsComponent, AddShipmentComponent, UpdateShipmentComponent, BlogsComponent, AddBlogComponent, ReviewsComponent, ShownReviewsComponent, HideReviewsComponent, MessagesComponent, SendOfferComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

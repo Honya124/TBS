@@ -39,9 +39,10 @@
     <div class="flex gap-[1rem] mt-[10%] items-center">
 
       <div class="flex">
-        <input type="text" placeholder="Search By Username"
+        <input type="text" placeholder="Search By Username"  [(ngModel)]="searchValue"
+        (change)="searchAllUsers(searchValue)"
           class="w-full md:w-80 px-3 h-10 rounded-l border-2 border-grey-green focus:outline-none focus:border-secondary">
-        <button type="submit" class="bg-secondary text-white rounded-r px-2 md:px-3 py-0 md:py-1">Search</button>
+        <button (click)="searchAllUsers(searchValue)" type="submit" class="bg-secondary text-white rounded-r px-2 md:px-3 py-0 md:py-1">{{'SEARCH'|translate}}</button>
       </div>
 
       <!-- [routerLinkActive]="'text-grey-green'" [routerLinkActiveOptions]="{ exact: true }" -->

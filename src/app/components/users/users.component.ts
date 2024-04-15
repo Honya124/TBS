@@ -1,7 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../../Service/UserService/user.service';
 import { PublicService } from '../../Service/public.service';
+import { UserService } from '../../Service/UserService/user.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-users',
@@ -13,20 +14,43 @@ export class UsersComponent {
   currentPage: number = 1;
   totalPages: any;
   element: any;
+  searchValue:string='';
   // SliceQuantity : number = 8;
   // orderTableData : any;
   // numbers : any;
   // sourceData :any;
 
+  formAddUser!: FormGroup;
+  getControlFormAddUser(name: string): FormControl {
+    return this.formAddUser.get(name) as FormControl;
+  }
+
+ 
+
   constructor(
     private userService: UserService,
     public publicService: PublicService,
+    private fb: FormBuilder,
     private router: Router
   ) {}
 
   ngOnInit(): void {
     this.getAllUsers(this.currentPage);
+
+    this.formAddUser = this.fb.group({
+      name: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+      confirm_password: ['', [Validators.required]],
+      note: ['', [Validators.required]],
+      role: ['', [Validators.required]],
+
+
+    });
   }
+
+
 
   getAllUsers(page: any) {
     this.userService.getUsers(page).subscribe(
@@ -66,6 +90,20 @@ export class UsersComponent {
     this.element = null;
     this.showEditUser = false;
   }
+
+
+    // search by users
+    searchAllUsers(keyword:any){
+      this.userService.searchUser(keyword,this.currentPage).subscribe(
+        (data:any)=>{
+          this.allUsersArray=data['employees']
+        
+        } ,(error) => {
+          console.error('Error fetching data: ', error);
+        }
+      )
+  
+    }
 
   //Pagination section
   goToPage(page: number): void {
