@@ -21,11 +21,15 @@ import { ProductsComponent } from './components/products/products.component';
 import { AddProductComponent } from './components/products/add-product/add-product.component';
 import { UpdateProductComponent } from './components/products/update-product/update-product.component';
 import { ProductDetailsComponent } from './components/products/product-details/product-details.component';
+import { CustomerComponent } from './components/customer/customer.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 @NgModule({
-  declarations: [AppComponent, LoginComponent, ButtonComponent, PasswordComponent, TextInputComponent, SidebarComponent, DashboardComponent, UsersComponent, EditUserComponent, AddUserComponent, ProductsComponent, AddProductComponent, UpdateProductComponent, ProductDetailsComponent],
+  declarations: [AppComponent, LoginComponent, ButtonComponent,
+     PasswordComponent, TextInputComponent, SidebarComponent, DashboardComponent,
+      UsersComponent, EditUserComponent, AddUserComponent, ProductsComponent, AddProductComponent, 
+      UpdateProductComponent, ProductDetailsComponent, CustomerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
