@@ -22,6 +22,7 @@ import { AddProductComponent } from './components/products/add-product/add-produ
 import { UpdateProductComponent } from './components/products/update-product/update-product.component';
 import { ProductDetailsComponent } from './components/products/product-details/product-details.component';
 import { CustomerComponent } from './components/customer/customer.component';
+import { CustomerDetailComponent } from './components/customer/customer-detail/customer-detail.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -29,7 +30,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [AppComponent, LoginComponent, ButtonComponent,
      PasswordComponent, TextInputComponent, SidebarComponent, DashboardComponent,
       UsersComponent, EditUserComponent, AddUserComponent, ProductsComponent, AddProductComponent, 
-      UpdateProductComponent, ProductDetailsComponent, CustomerComponent],
+      UpdateProductComponent, ProductDetailsComponent, CustomerComponent, CustomerDetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
