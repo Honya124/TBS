@@ -20,7 +20,7 @@ body{
     font-family: var(--font-family);
 }
 
- @layer reset,primng;
+ /* @layer reset,primng; */
 
 /* @layer reset{
     button{
