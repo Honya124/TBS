@@ -18,7 +18,8 @@
               <a href="#" class="text-xs text-center text-gray-500 uppercase">or login with email</a>
               <span class="border-b w-1/5 lg:w-1/4"></span>
           </div>
-          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-full">
+          <!-- [formGroup]="form" (ngSubmit)="onSubmit()"  -->
+          <form class="w-full">
             <!-- <div class="mt-4">
               <label class="block text-gray-700 text-sm font-bold mb-2">{{'email_address'|translate}}</label>
               <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" />
@@ -26,18 +27,18 @@
 
           <div class=" bg-white border border-gray-300 rounded  flex items-center px-3 py-2 w-full mb-4">
             <!-- Country Code Dropdown -->
-            <select name="'country_code'|translate"
+            <!-- <select name="'country_code'|translate"
               class="h-full w-1/6 bg-white border-none outline-none text-base rounded-l-lg" formControlName="countryCode">
               <option *ngFor="let country of code" [value]="country.code" class="text-primary h-[30vh] hover:bg-hover">
                 {{ country.code }}
               </option>
-            </select>
+            </select> -->
             <!-- <p-dropdown formControlName="countryCode" [options]="code" optionLabel="country" placeholder="Select a City"></p-dropdown> -->
             <!-- Phone Number Input -->
             <!-- <input type="text" name="phone_number" class="w-full h-full border-none outline-none text-base rounded-r-lg"
               [(ngModel)]="phoneNo" [placeholder]="'phone_number'|translate" formControlName="phone" /> -->
 
-              <input pInputText type="text" class="p-inputtext-lg bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none " [placeholder]="'phone_number'|translate" formControlName="phone" />
+              <!-- <input pInputText type="text" class="p-inputtext-lg bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none " [placeholder]="'phone_number'|translate" formControlName="phone" /> -->
           </div>
 
           <div class="mt-4">

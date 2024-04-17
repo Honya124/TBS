@@ -20,12 +20,12 @@ body{
     font-family: var(--font-family);
 }
 
-/* @layer reset,primng;
+ @layer reset,primng;
 
-@layer reset{
+/* @layer reset{
     button{
         &:focus{
             box-shadow: none;
         }
     }
-} */
+}  */

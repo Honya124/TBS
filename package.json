@@ -20,8 +20,6 @@
     "@angular/router": "^17.3.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
-    "angular-highcharts": "^17.0.1",
-    "highcharts": "^11.4.1",
     "ngx-print": "^1.5.1",
     "primeicons": "^7.0.0",
     "primeng": "^17.13.0",
