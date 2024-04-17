@@ -8,6 +8,7 @@ import { PublicService } from '../public.service';
 export class CustomerService {
 
   private apiUrl = 'https://belita-backend-ece2qdboea-uc.a.run.app';
+  lang = localStorage.getItem('selectedLanguage');
     // private http:HttpClient = inject(HttpClient);
 
     customerDetail_id:any
@@ -91,5 +92,21 @@ export class CustomerService {
 
     return this.http.get(url, { headers });
 
+  }
+
+  searchCustomer(keyword:any,page: any) {
+    return this.http.post(
+      this.apiUrl +
+        '/search_customers?lang='+this.lang,{
+          "keyword":keyword,
+          "page":page
+        },
+      {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + localStorage.getItem('token'),
+        }),
+      }
+    );
   }
 }

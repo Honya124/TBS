@@ -1,4 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
-@tailwind base;
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+/* for icons  */
+@import "primeicons/primeicons.css";
+
+/* @tailwind base; */
+
+
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+
+
+body{
+    font-family: var(--font-family);
+}
+
+/* @layer reset,primng;
+
+@layer reset{
+    button{
+        &:focus{
+            box-shadow: none;
+        }
+    }
+} */

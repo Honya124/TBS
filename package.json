@@ -23,6 +23,8 @@
     "angular-highcharts": "^17.0.1",
     "highcharts": "^11.4.1",
     "ngx-print": "^1.5.1",
+    "primeicons": "^7.0.0",
+    "primeng": "^17.13.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

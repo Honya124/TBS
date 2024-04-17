@@ -1,73 +1,63 @@
-<div class="bg-background flex items-center justify-center h-screen w-screen font-primary">
-  <div class="relative p-4 w-full max-w-3xl  ">
-    <div class="bg-white shadow-lg mx-[4vw] p-5 rounded-md ">
-
-
-      <h2 class="text-2xl font-semibold text-center mb-4">{{'login'|translate}}</h2>
-      <p class="text-md text-center mb-4">{{'please_enter_your_phone_number_and_password'| translate}}</p>
-      <div class="my-[2vh]"></div>
-      <!-- class="p-4 absolute top-[3rem] left-0 right-0" -->
-      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-full">
-        <!-- class="my-2 h-12 bg-white border border-gray-300 rounded py-1 px-2 flex items-center sm:my-1 sm:h-10 sm:py-0.5 sm:px-1" -->
-        <div class=" bg-white border border-gray-300 rounded  flex items-center px-3 py-2 w-full mb-4">
-          <!-- Country Code Dropdown -->
-          <select name="'country_code'|translate"
-            class="h-full w-1/6 bg-white border-none outline-none text-base rounded-l-lg" formControlName="countryCode">
-            <option *ngFor="let country of code" [value]="country.code" class="text-primary h-[30vh] hover:bg-hover">
-              {{ country.code }}
-            </option>
-          </select>
-          <!-- Phone Number Input -->
-          <input type="text" name="phone_number" class="w-full h-full border-none outline-none text-base rounded-r-lg"
-            [(ngModel)]="phoneNo" [placeholder]="'phone_number'|translate" formControlName="phone" />
-        </div>
-
-        <app-password [control]="getControl('password')" [placeholder]="'password'|translate">
-        </app-password>
-
-        <div class="mt-4">
-          <app-button [outline]="false" (onClick)="onSubmit()">
-            {{'login'|translate}}
-          </app-button>
-        </div>
-        <!-- or flower  -->
-        <div class="text-grey flex w-full items-center justify-center gap-2 py-2  text-sm mt-4">
-          <div class="">
-            <svg width="176" height="12" viewBox="0 0 176 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M1.01906 3.1095C1.53416 2.80275 1.55114 2.75212 1.31713 2.22168C0.863177 1.19229 0.968897 0.854595 1.82374 0.605591C2.80148 0.320962 4.40409 0.632781 5.33225 1.28848C5.68376 1.53673 6.4921 2.07861 7.12875 2.49243L8.28629 3.24507C28.6255 3.23986 151.379 3.25294 175.5 3.25294L175.5 3.7217L175.5 4.19046L29.057 4.19046L22.7222 4.19046L21.9154 5.77298C20.6363 8.28177 18.5132 10.2095 15.9511 11.1882C14.7419 11.6503 14.4874 11.6113 14.6437 10.9874C14.9223 9.87535 16.1811 7.72938 17.1918 6.64393C17.9673 5.81117 18.6714 4.88808 19.9156 4.19571L13.5122 4.19308L8.32006 4.19046L7.33865 4.79028C6.79866 5.1201 6.07442 5.6241 5.72928 5.91023C4.33426 7.066 1.23629 7.32531 1.08639 6.29873C1.05243 6.06604 1.16124 5.60948 1.32832 5.28397C1.49539 4.95847 1.60998 4.68021 1.58297 4.66578C0.334564 3.9962 0.1918 3.60244 1.01906 3.1095ZM5.40247 4.10758C4.74229 4.52796 3.38391 4.66203 2.53698 4.39034C1.12806 3.93827 1.22819 3.45638 2.81652 3.0435C3.52108 2.86031 3.87703 2.86312 4.58988 3.057C5.80279 3.38719 6.04414 3.69901 5.40247 4.10758ZM2.92996 2.30568C2.31859 2.43918 2.17139 2.40955 2.01261 2.12117C1.61114 1.39216 1.76972 1.19023 2.73974 1.19454C3.78558 1.19923 5.01971 1.68673 5.58536 2.31843L5.97121 2.74931L5.4889 2.61337C4.09021 2.21942 3.59651 2.16018 2.92996 2.30568ZM5.58536 5.12497C5.01971 5.75667 3.78558 6.24417 2.73974 6.24886C1.99178 6.25224 1.82451 6.19261 1.82914 5.92486C1.84226 5.19772 2.16136 4.9699 2.93189 5.13809C3.59632 5.28322 4.09136 5.2236 5.4889 4.83003L5.97121 4.69409L5.58536 5.12497ZM19.2586 8.40833C18.3355 9.29128 16.254 10.5655 15.7351 10.5655C15.4162 10.5655 15.4679 10.4013 16.2168 9.03702C16.5934 8.35095 17.2862 7.39919 17.7567 6.92218C18.5977 6.06905 20.2279 4.94047 20.6189 4.94047C20.7285 4.94047 20.0483 5.69235 19.107 6.61131C17.8111 7.87676 17.4278 8.36314 17.5273 8.61571C17.6358 8.89003 17.9815 8.6369 19.4838 7.18281C20.4875 6.21136 21.3086 5.48423 21.3086 5.5671C21.3086 5.95711 20.1667 7.53963 19.2586 8.40833Z"
-                fill="#B0A6BD" />
-            </svg>
+<!-- https://play.tailwindcss.com/MIwj5Sp9pw -->
+<div class="py-16">
+  <div class="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
+      <div class="hidden lg:block lg:w-1/2 bg-cover"
+          style="background-image:url('../../../assets/img/bg1.jpg')">
+      </div>
+      <div class="w-full p-8 lg:w-1/2">
+          <h2 class="text-2xl font-semibold text-gray-700 text-center">Brand</h2>
+          <p class="text-xl text-gray-600 text-center">Welcome back!</p>
+          <a href="#" class="flex items-center justify-start mt-4 text-white ">
+              <div class="px-4 py-3">
+                 
+              </div>
+              <h1 class="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">Hello</h1>
+          </a>
+          <div class="mt-4 flex items-center justify-between">
+              <span class="border-b w-1/5 lg:w-1/4"></span>
+              <a href="#" class="text-xs text-center text-gray-500 uppercase">or login with email</a>
+              <span class="border-b w-1/5 lg:w-1/4"></span>
           </div>
-          Belita
-          <div class=" ">
-            <svg width="176" height="12" viewBox="0 0 176 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M174.981 3.1095C174.466 2.80275 174.449 2.75212 174.683 2.22168C175.137 1.19229 175.031 0.854595 174.176 0.605591C173.199 0.320962 171.596 0.632781 170.668 1.28848C170.316 1.53673 169.508 2.07861 168.871 2.49243L167.714 3.24507C147.375 3.23986 24.6209 3.25294 0.5 3.25294L0.5 3.7217L0.5 4.19046L146.943 4.19046L153.278 4.19046L154.085 5.77298C155.364 8.28177 157.487 10.2095 160.049 11.1882C161.258 11.6503 161.513 11.6113 161.356 10.9874C161.078 9.87535 159.819 7.72938 158.808 6.64393C158.033 5.81117 157.329 4.88808 156.084 4.19571L162.488 4.19308L167.68 4.19046L168.661 4.79028C169.201 5.1201 169.926 5.6241 170.271 5.91023C171.666 7.066 174.764 7.32531 174.914 6.29873C174.948 6.06604 174.839 5.60948 174.672 5.28397C174.505 4.95847 174.39 4.68021 174.417 4.66578C175.665 3.9962 175.808 3.60244 174.981 3.1095ZM170.598 4.10758C171.258 4.52796 172.616 4.66203 173.463 4.39034C174.872 3.93827 174.772 3.45638 173.183 3.0435C172.479 2.86031 172.123 2.86312 171.41 3.057C170.197 3.38719 169.956 3.69901 170.598 4.10758ZM173.07 2.30568C173.681 2.43918 173.829 2.40955 173.987 2.12117C174.389 1.39216 174.23 1.19023 173.26 1.19454C172.214 1.19923 170.98 1.68673 170.415 2.31843L170.029 2.74931L170.511 2.61337C171.91 2.21942 172.403 2.16018 173.07 2.30568ZM170.415 5.12497C170.98 5.75667 172.214 6.24417 173.26 6.24886C174.008 6.25224 174.175 6.19261 174.171 5.92486C174.158 5.19772 173.839 4.9699 173.068 5.13809C172.404 5.28322 171.909 5.2236 170.511 4.83003L170.029 4.69409L170.415 5.12497ZM156.741 8.40833C157.665 9.29128 159.746 10.5655 160.265 10.5655C160.584 10.5655 160.532 10.4013 159.783 9.03702C159.407 8.35095 158.714 7.39919 158.243 6.92218C157.402 6.06905 155.772 4.94047 155.381 4.94047C155.271 4.94047 155.952 5.69235 156.893 6.61131C158.189 7.87676 158.572 8.36314 158.473 8.61571C158.364 8.89003 158.019 8.6369 156.516 7.18281C155.512 6.21136 154.691 5.48423 154.691 5.5671C154.691 5.95711 155.833 7.53963 156.741 8.40833Z"
-                fill="#B0A6BD" />
-            </svg>
-          </div>
-        </div>
-        <!-- End flower  -->
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-full">
+            <!-- <div class="mt-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2">{{'email_address'|translate}}</label>
+              <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" />
+          </div> -->
 
-        <div class="mt-4 text-center">
-          <label class="inline-flex cursor-pointer">
-            <span class="text-primary text-sm">{{'forgot_your_password'|translate}}</span>
-            <div class="w-1"></div>
-            <span class="text-grey-green text-sm underline">{{'recover_password'|translate}}</span>
-          </label>
-        </div>
-        <!-- <div class="text-center mt-2">
-          <label class="inline-flex cursor-pointer"> -->
-        <!-- text-xs  -->
-        <!-- <span class="text-primary text-sm"
-              (click)="service.showRegisterFunc()">{{'new_to_belt'|translate}}</span> -->
-        <!-- <div class="w-1"></div>
-              <span class="text-grey-green text-sm underline"
-              (click)="service.showRegisterFunc()">create new account</span>
-          </label>
-        </div> -->
-      </form>
-    </div>
+          <div class=" bg-white border border-gray-300 rounded  flex items-center px-3 py-2 w-full mb-4">
+            <!-- Country Code Dropdown -->
+            <select name="'country_code'|translate"
+              class="h-full w-1/6 bg-white border-none outline-none text-base rounded-l-lg" formControlName="countryCode">
+              <option *ngFor="let country of code" [value]="country.code" class="text-primary h-[30vh] hover:bg-hover">
+                {{ country.code }}
+              </option>
+            </select>
+            <!-- <p-dropdown formControlName="countryCode" [options]="code" optionLabel="country" placeholder="Select a City"></p-dropdown> -->
+            <!-- Phone Number Input -->
+            <!-- <input type="text" name="phone_number" class="w-full h-full border-none outline-none text-base rounded-r-lg"
+              [(ngModel)]="phoneNo" [placeholder]="'phone_number'|translate" formControlName="phone" /> -->
+
+              <input pInputText type="text" class="p-inputtext-lg bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none " [placeholder]="'phone_number'|translate" formControlName="phone" />
+          </div>
+
+          <div class="mt-4">
+              <div class="flex justify-between">
+                  <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                  <a href="#" class="text-xs text-gray-500">Forget Password?</a>
+              </div>
+              <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" />
+          </div>
+          <div class="mt-8">
+              <button class="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Login</button>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+              <span class="border-b w-1/5 md:w-1/4"></span>
+              <a href="#" class="text-xs text-gray-500 uppercase">or sign up</a>
+              <span class="border-b w-1/5 md:w-1/4"></span>
+          </div>
+          
+          </form>
+       
+      </div>
   </div>
 </div>

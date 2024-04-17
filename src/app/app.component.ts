@@ -20,7 +20,7 @@ export class AppComponent {
   ];
 
   public isEnglish = false;
-  public showSidebar = false;
+  // public showSidebar = false;
   public showPackage = false;
   public showLogin = true;
 
@@ -56,9 +56,7 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.service.showSidebar$.subscribe((show) => {
-      this.showSidebar = show;
-    });
+   
   }
   selectLanguage(langCode: string) {
     this.currentLanguage = langCode;
