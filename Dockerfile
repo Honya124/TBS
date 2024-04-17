@@ -1,6 +1,6 @@
 FROM node:latest
 WORKDIR /app
-COPY ./dist/belita-updated-dashboard/ /app
+COPY ./dist/belita-updated-dashboard/browser/ /app
 RUN npm install -g http-server
 EXPOSE 80
 CMD ["http-server", "-p", "8080"]
