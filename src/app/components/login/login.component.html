@@ -5,56 +5,61 @@
           style="background-image:url('../../../assets/img/bg1.jpg')">
       </div>
       <div class="w-full p-8 lg:w-1/2">
-          <h2 class="text-2xl font-semibold text-gray-700 text-center">Brand</h2>
-          <p class="text-xl text-gray-600 text-center">Welcome back!</p>
-          <a href="#" class="flex items-center justify-start mt-4 text-white ">
-              <div class="px-4 py-3">
-                 
-              </div>
-              <h1 class="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">Hello</h1>
-          </a>
+          <!-- <h2 class="text-2xl font-semibold text-gray-700 text-center">Brand</h2> -->
+          <div class=" h-[17vh]"></div>
+          <h2 class="text-3xl font-bold text-gray-700 text-left  ">{{'HELLO!'|translate}}</h2>
+          <p class="text-xl text-gray-600 text-center">In publishing and graphic design, Lorem ipsum is
+             a placeholder text commonly used to demonstrate the</p>
+
           <div class="mt-4 flex items-center justify-between">
-              <span class="border-b w-1/5 lg:w-1/4"></span>
-              <a href="#" class="text-xs text-center text-gray-500 uppercase">or login with email</a>
-              <span class="border-b w-1/5 lg:w-1/4"></span>
+              <span class=" w-1/5 lg:w-1/4"></span>
+              <!-- <a href="#" class="text-xs text-center text-gray-500 uppercase">or login with email</a> -->
+              <span class=" w-1/5 lg:w-1/4"></span>
           </div>
           <!-- [formGroup]="form" (ngSubmit)="onSubmit()"  -->
-          <form class="w-full">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-full">
             <!-- <div class="mt-4">
               <label class="block text-gray-700 text-sm font-bold mb-2">{{'email_address'|translate}}</label>
               <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" />
           </div> -->
-
-          <div class=" bg-white border border-gray-300 rounded  flex items-center px-3 py-2 w-full mb-4">
-            <!-- Country Code Dropdown -->
-            <!-- <select name="'country_code'|translate"
-              class="h-full w-1/6 bg-white border-none outline-none text-base rounded-l-lg" formControlName="countryCode">
+          <div class=" py-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2 ">{{'Phone_number'|translate}}</label>
+            <div class=" border border-gray-300   focus:shadow-outline  rounded flex items-center w-full mb-4">
+           
+              <!-- Country Code Dropdown -->
+              <select [name]="'country_code'|translate"
+              class="h-full w-1/4 bg-gray-200 border-none outline-none py-[.76rem] px-1 rounded-l  text-base" formControlName="countryCode">
               <option *ngFor="let country of code" [value]="country.code" class="text-primary h-[30vh] hover:bg-hover">
                 {{ country.code }}
               </option>
-            </select> -->
-            <!-- <p-dropdown formControlName="countryCode" [options]="code" optionLabel="country" placeholder="Select a City"></p-dropdown> -->
-            <!-- Phone Number Input -->
-            <!-- <input type="text" name="phone_number" class="w-full h-full border-none outline-none text-base rounded-r-lg"
-              [(ngModel)]="phoneNo" [placeholder]="'phone_number'|translate" formControlName="phone" /> -->
-
-              <!-- <input pInputText type="text" class="p-inputtext-lg bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none " [placeholder]="'phone_number'|translate" formControlName="phone" /> -->
+            </select>
+              <!-- <p-dropdown formControlName="countryCode" [options]="code" optionLabel="code" placeholder="Select a Country"></p-dropdown> -->
+              <!-- Phone Number Input -->
+              <input type="text" [name]="'phone_number'|translate" class="bg-gray-200 text-gray-700  rounded-r focus:outline-none focus:shadow-outline border-none  py-[.66rem] px-4 block w-full appearance-none"
+                [(ngModel)]="phoneNo" [placeholder]="'phone_number'|translate" formControlName="phone" />
+  
+                <!-- <input pInputText type="text" class="p-inputtext-lg bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none " [placeholder]="'phone_number'|translate" formControlName="phone" /> -->
+            </div>
+      
           </div>
+         
 
           <div class="mt-4">
               <div class="flex justify-between">
-                  <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
-                  <a href="#" class="text-xs text-gray-500">Forget Password?</a>
+                  <label class="block text-gray-700 text-sm font-bold mb-2">{{'Password'|translate}}</label>
+                  <a href="#" class="text-xs text-gray-500">{{'Forget_Password?'|translate}}</a>
               </div>
-              <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" />
+              <app-password [control]="getControl('password')" [placeholder]="'password'|translate">
+              </app-password>
+              <!-- <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" /> -->
           </div>
           <div class="mt-8">
               <button class="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Login</button>
           </div>
           <div class="mt-4 flex items-center justify-between">
-              <span class="border-b w-1/5 md:w-1/4"></span>
+              <span class=" w-1/5 md:w-1/4"></span>
               <a href="#" class="text-xs text-gray-500 uppercase">or sign up</a>
-              <span class="border-b w-1/5 md:w-1/4"></span>
+              <span class=" w-1/5 md:w-1/4"></span>
           </div>
           
           </form>

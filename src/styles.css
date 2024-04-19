@@ -5,16 +5,18 @@
 /* for icons  */
 @import "primeicons/primeicons.css";
 
-/* @tailwind base; */
-
-
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
 
 
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
     font-family: var(--font-family);
@@ -22,10 +24,43 @@ body{
 
  @layer reset,primng;
 
-/* @layer reset{
+@layer reset{
     button{
         &:focus{
             box-shadow: none;
         }
     }
-}  */
+    .custom-input{
+        &:focus{
+            box-shadow: none;
+        }
+        /* border: 1px solid #000; */
+    }
+
+} 
+
+/* flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black bg-black text-white */
+@layer primng {
+    .custom-input {
+    display: flex;
+    padding: 12px !important;
+    border:2px solid #adadad !important;
+    /* border-radius: 8px; */
+    font-weight: 500 !important;
+    }
+    .custom-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex:none;
+        padding: 10px 12px !important;
+        border:2px solid #575757 !important;
+        background-color: #575757 !important;
+        color: #ffffff !important;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+
+  }

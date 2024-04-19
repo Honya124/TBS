@@ -12,12 +12,19 @@ import { ButtonComponent } from './components/button/button.component';
 import { PasswordComponent } from './components/password/password.component';
 import { TextInputComponent } from './components/text-input/text-input.component';
 import { DropdownModule } from 'primeng/dropdown';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
+import { AddBlockComponent } from './components/add-block/add-block.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 @NgModule({
   declarations: [AppComponent, LoginComponent, ButtonComponent,
-     PasswordComponent, TextInputComponent, ],
+     PasswordComponent, TextInputComponent, DashboardComponent, SidebarComponent, HeaderComponent, AddBlockComponent, ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,6 +33,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     NgxPrintModule,
     DropdownModule,
+    InputNumberModule,
+    InputTextModule,
+    ButtonModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

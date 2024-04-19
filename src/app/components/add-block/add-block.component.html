@@ -1,0 +1,14 @@
+
+<div class="flex flex-1 flex-col  justify-center space-y-5 max-w-md mx-auto mt-24">
+    <div class="flex flex-col space-y-2 text-center">
+        <!-- <h2 class="text-3xl md:text-4xl font-bold">Confirm OTP</h2> -->
+        <p class="text-xl font-semibold">
+           Enter a code
+        </p>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="flex flex-col max-w-md space-y-5" >
+              <input type="text" class="custom-input"  pInputText formControlName="code" placeholder="Enter a code"/>
+              <!-- <button type="submit">ok</button> -->
+        <p-button type="submit" class="custom-button" label="Ok" ></p-button>
+    </form>
+</div>

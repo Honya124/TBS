@@ -21,7 +21,14 @@ module.exports = {
         "grey-label": "#6B7280",
         "dashboard-link": "#5e5e5e",
         "dark-red": "#990000",
-        "dark-grey": "#262626",
+        
+        // ammana TBS Client Dashboard
+        "dark-blue": "#14193f",
+        "steel-blue": "#4d80b9",
+        "azure": "#31699c", // toze toxtra la steel
+        "dark-grey": "#575757",
+        "silver": "#adadad",
+
       },
       accentColor: {
         "grey-green": "#91AFBA",
