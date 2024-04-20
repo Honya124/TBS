@@ -1,8 +1,8 @@
 <div class="flex w-full h-full ">
-    <app-sidebar></app-sidebar> 
-   <div class="flex flex-col w-full  ">
+  <app-sidebar></app-sidebar>
+  <div class="flex flex-col w-full  ">
     <div class="w-full">
-        <app-header></app-header>
+      <app-header></app-header>
     </div>
     <div class="h-[5vh]"></div>
     <!-- buttons  -->
@@ -12,37 +12,49 @@
             <button class="focus:outline-none cursor-pointer focus:bg-hover shadow-md
              bg-steel-blue hover:bg-azure text-white font-semibold py-2 px-4 rounded text-center
               transition-colors duration-300 ease-in-out h-[13vh] ">
-              
 
-      
+
+
             </button>
           </ng-container>
         </ng-container>
       </div> -->
+    <!-- <div class="grid grid-cols-10 gap-4  mx-[4vw] ">
+      <ng-container *ngFor="let button of buttonData">
+        <button
+          class="focus:outline-none cursor-pointer focus:bg-hover shadow-md bg-steel-blue hover:bg-azure text-white font-semibold py-2 px-4 rounded text-center transition-colors duration-300 ease-in-out h-[13vh] ">
+          <p *ngFor="let data of button">{{ data }}</p>
+        </button>
+      </ng-container>
+    </div> -->
+ <!-- DashboardComponent.html -->
+ <div class="grid grid-cols-10 gap-4 mx-4">
+   <ng-container *ngFor="let button of buttonData; index as i">
+     <button
+       class="focus:outline-none cursor-pointer focus:bg-hover shadow-md bg-steel-blue hover:bg-azure text-white font-semibold py-2 px-4 rounded text-center transition-colors duration-300 ease-in-out h-13">
+       <ng-container *ngIf="button.data.length; else noData">
+         <p *ngFor="let data of button.data">{{ data }}</p>
+       </ng-container>
+       <ng-template #noData>
+         <div class="py-4"></div>
+       </ng-template>
+     </button>
+   </ng-container>
+ </div>
 
-      <div class="grid grid-cols-10 gap-4  mx-[4vw] ">
-  <ng-container *ngFor="let button of buttonData">
-    <button class="focus:outline-none cursor-pointer focus:bg-hover shadow-md bg-steel-blue hover:bg-azure text-white font-semibold py-2 px-4 rounded text-center transition-colors duration-300 ease-in-out h-[13vh] ">
-      <p *ngFor="let data of button">{{ data }}</p>
-    </button>
-  </ng-container>
-</div>
-<button routerLink=""></button>
-      <div class="h-[3vh]"></div>
-   <div class="flex gap-4  mx-[4vw] mb-[5vh]">
-    <label for="price" class="flex flex-col ">Price
-    <app-text-input id="price" placeholder="price"></app-text-input></label>
-    <label for="SL"  class="flex flex-col ">SL
-      <app-text-input id="SL" placeholder="SL"></app-text-input>
+    <button routerLink=""></button>
+    <div class="h-[3vh]"></div>
+    <div class="flex gap-4  mx-[4vw] mb-[5vh]">
+      <label for="price" class="flex flex-col ">Price
+        <app-text-input id="price" placeholder="price"></app-text-input></label>
+      <label for="SL" class="flex flex-col ">SL
+        <app-text-input id="SL" placeholder="SL"></app-text-input>
 
-    </label>
-    <label for="TP"  class="flex flex-col ">TP
-    <app-text-input id="TP" placeholder="TP"></app-text-input> </label>
-   </div>
+      </label>
+      <label for="TP" class="flex flex-col ">TP
+        <app-text-input id="TP" placeholder="TP"></app-text-input> </label>
+    </div>
     <!-- end coloumn  -->
-   </div>
-   
+  </div>
+
 </div>
-
-
-
